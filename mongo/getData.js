@@ -8,7 +8,7 @@ const db= 'jiten';
 async function mongoDB(req,resp) {
     await client.connect();
     console.log('Connected successfully to server');
-    const db = client.db('jiten');
+    const db = client.db('reactApp');
     let collection=db.collection('trending')
     console.log("database connected")
     resp.json(await collection.find().sort({_id:-1}).toArray());
